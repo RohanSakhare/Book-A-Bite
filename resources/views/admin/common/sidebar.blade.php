@@ -12,13 +12,14 @@
               </div>
               <!-- Sidebar navigation-->
               <nav class="sidebar-nav scroll-sidebar" data-simplebar="">
-                  <ul id="sidebarnav">
+                <ul id="sidebarnav">
                       <li class="nav-small-cap">
                           <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
                           <span class="hide-menu">Home</span>
                       </li>
                       <li class="sidebar-item">
-                          <a class="sidebar-link" href="{{ route('dashboard') }}" aria-expanded="false">
+                          <a class="sidebar-link  {{ request()->is('dashboard') ? 'active' : '' }}"
+                              href="{{ route('dashboard') }}" aria-expanded="false">
                               <span>
                                   <i class="ti ti-layout-dashboard"></i>
                               </span>
@@ -30,7 +31,8 @@
                           <span class="hide-menu">UI COMPONENTS</span>
                       </li>
                       <li class="sidebar-item">
-                          <a class="sidebar-link" href="{{ route('header') }}" aria-expanded="false">
+                          <a class="sidebar-link {{ request()->is('admin/header', 'admin/add_header', 'admin/edit_header/*') ? 'active' : '' }}"
+                              href="{{ route('header') }}" aria-expanded="false">
                               <span>
                                   <i class="ti ti-article"></i>
                               </span>
@@ -38,7 +40,8 @@
                           </a>
                       </li>
                       <li class="sidebar-item">
-                          <a class="sidebar-link" href="{{ route('booking') }}" aria-expanded="false">
+                          <a class="sidebar-link  {{ request()->is('admin/booking', 'admin/booking_view/*') ? 'active' : '' }}"
+                              href="{{ route('booking') }}" aria-expanded="false">
                               <span>
                                   <i class="ti ti-alert-circle"></i>
                               </span>
@@ -46,27 +49,27 @@
                           </a>
                       </li>
                       <li class="sidebar-item">
-                          <a class="sidebar-link has-arrow" href="javascript:void(0)" aria-expanded="false">
+                          <a class="sidebar-link has-arrow" href="javascript:void(0)" aria-expanded="false"
+                              onclick="toggleDropdown(this)">
                               <span>
                                   <i class="ti ti-menu"></i>
                               </span>
                               <span class="hide-menu">Menu</span>
                               <span class="ps-5 ms-5">
-                                  <i class="fa-solid fa-angle-down text-end"></i>
+                                  <i class="fa-solid fa-angle-right text-end dropdown-arrow"></i>
                               </span>
                           </a>
-                          <ul aria-expanded="false" class="collapse first-level">
+                          <ul aria-expanded="false" class="collapse first-level ms-4 w-75">
+                            <li class="sidebar-item">
+                                <a class="sidebar-link {{ request()->is('admin/appetizer', 'admin/add_appetizer', 'admin/edit_appetizer/*') ? 'active' : '' }}" href="{{ route('appetizer') }}" aria-expanded="false">
+                                    <span>
+                                        <i class="ti ti-article"></i>
+                                    </span>
+                                    <span class="hide-menu">Appetizer</span>
+                                </a>
+                            </li>
                               <li class="sidebar-item">
-                                  <a href="{{ route('appetizer') }}"
-                                      class="sidebar-link {{ request()->is('appetizer') ? 'active' : '' }}">
-                                      <span> 
-                                          <i class="ti ti-burger"></i>
-                                      </span>
-                                      <span class="hide-menu">Appetizer</span>
-                                  </a>
-                              </li>
-                              <li class="sidebar-item">
-                                  <a href="#" class="sidebar-link {{ request()->is('#') ? 'active' : '' }}">
+                                  <a href="{{ route('main_course') }}" class="sidebar-link {{ request()->is('main_course') ? 'active' : '' }}">
                                       <span>
                                           <i class="ti ti-tools-kitchen-2"></i>
                                       </span>
@@ -74,21 +77,23 @@
                                   </a>
                               </li>
                               <li class="sidebar-item">
-                                  <a href="#" class="sidebar-link {{ request()->is('#') ? 'active' : '' }}">
+                                  <a href="{{ route('dessert') }}" class="sidebar-link {{ request()->is('dessert') ? 'active' : '' }}">
                                       <span>
-                                          <i class="ti ti-cake-roll"></i>
+                                          <i class="ti ti-milkshake"></i>
                                       </span>
                                       <span class="hide-menu">Desserts</span>
                                   </a>
                               </li>
                           </ul>
                       </li>
+
+
                       <li class="sidebar-item">
                           <a class="sidebar-link" href="./ui-forms.html" aria-expanded="false">
                               <span>
                                   <i class="ti ti-file-description"></i>
                               </span>
-                              <span class="hide-menu">Forms</span>
+                              <span class="hide-menu">Testimonial</span>
                           </a>
                       </li>
                       <li class="sidebar-item">
@@ -96,9 +101,17 @@
                               <span>
                                   <i class="ti ti-typography"></i>
                               </span>
-                              <span class="hide-menu">Typography</span>
+                              <span class="hide-menu">Contact Us</span>
                           </a>
                       </li>
+                      <li class="sidebar-item">
+                        <a class="sidebar-link" href="./ui-typography.html" aria-expanded="false">
+                            <span>
+                                <i class="ti ti-typography"></i>
+                            </span>
+                            <span class="hide-menu">Our Features</span>
+                        </a>
+                    </li>
                       <li class="nav-small-cap">
                           <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
                           <span class="hide-menu">AUTH</span>

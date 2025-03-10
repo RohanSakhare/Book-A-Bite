@@ -10,14 +10,10 @@
 <body>
 
     @include('admin/common/header')
-
     <div class="px-3 bg-body">
-
         <main id="main" class="main">
-
             <div class="pagetitle mb-5">
-
-                <h1>Starter </h1>
+                <h1>Dessert</h1>
             </div><!-- End Page Title -->
 
             <section class="section">
@@ -25,13 +21,12 @@
                     <div class="col-12">
                         <div class="card table-responsive shadow">
                             <div class="card-body pt-3">
-
                                 <div class="row">
                                     <div class="col-lg-6 mb-4">
-                                        <h2>Starter :</h2>
+                                        <h2>Dessert :</h2>
                                     </div>
                                     <div class="col-lg-6 mb-2 text-end">
-                                        <a href="{{ route('add_appetizer') }}" class="btn btn-primary">Add</a>
+                                        <a href="{{ route('add_dessert') }}" class="btn btn-primary">Add</a>
                                     </div>
                                 </div>
 
@@ -47,19 +42,15 @@
                                             <th>Action</th>
                                         </tr>
                                     </thead>
-                                    <tbody  class="align-baseline">
+                                    <tbody class="align-baseline">
                                     </tbody>
                                 </table>
                             </div>
                         </div>
                     </div>
                 </div>
-
-
             </section>
-
         </main>
-
     </div>
 
     @include('admin/common/footer-links')
@@ -69,10 +60,10 @@
             var table = $('#table1').DataTable({
                 processing: true,
                 serverSide: true,
-                ajax: "{{ route('appetizer_script') }}",
+                ajax: "{{ route('dessert_script') }}",
                 columns: [{
-                        data: 'appetizer_id',
-                        name: 'appetizer_id'
+                        data: 'dessert_id',
+                        name: 'dessert_id'
                     },
                     {
                         data: 'image',
@@ -96,6 +87,7 @@
                         orderable: false,
                         searchable: false
                     }
+
                 ]
             });
         });
