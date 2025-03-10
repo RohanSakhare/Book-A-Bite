@@ -9,6 +9,8 @@ use App\Http\Controllers\Admin\HeaderController;
 use App\Http\Controllers\Admin\AppetizersController;
 use GuzzleHttp\Psr7\Header;
 use App\Http\Controllers\Admin\BookingController;
+use App\Http\Controllers\Admin\MainCourseController;
+use App\Http\Controllers\Admin\DessertController;
 
 /*
 |--------------------------------------------------------------------------
@@ -64,7 +66,7 @@ Route::middleware(['isLoggedIn', 'preventBackHistory'])->group(function () {
         Route::post('admin/store_booking', 'Store')->name('store_booking');
         Route::delete('admin/delete_booking/{bookings_id}', 'Delete')->name('delete_booking');
         Route::get('admin/booking_script', 'BookingScript')->name('booking_script');
-        Route::get('admin/booking_view//{bookings_id}', 'BookingView')->name('booking_view');
+        Route::get('admin/booking_view/{bookings_id}', 'BookingView')->name('booking_view');
         Route::get('admin/check_availability', 'checkAvailability')->name('check_availability');
     });
 
@@ -80,5 +82,26 @@ Route::middleware(['isLoggedIn', 'preventBackHistory'])->group(function () {
         Route::get('admin/appetizer_script', 'AppetizerScript')->name('appetizer_script');
     });
 
+    // Main Course section
+    Route::controller(MainCourseController::class)->group(function () {
+        Route::get('admin/main_course', 'MainCourse')->name('main_course');
+        Route::get('admin/add_main_course', 'Add')->name('add_main_course');
+        Route::post('admin/store_main_course', 'Store')->name('store_main_course');
+        Route::get('admin/edit_main_course/{main_course_id}', 'Edit')->name('edit_main_course');
+        Route::post('admin/update_main_course/{main_course_id}', 'Update')->name('update_main_course');
+        Route::delete('admin/delete_main_course/{main_course_id}', 'Delete')->name(name: 'delete_main_course');
+        Route::get('admin/main_course_script', 'MainCourseScript')->name('main_course_script');
+    });
+
+    // Dessert section
+    Route::controller(DessertController::class)->group(function () {
+        Route::get('admin/dessert', 'Dessert')->name('dessert');
+        Route::get('admin/add_dessert', 'Add')->name('add_dessert');
+        Route::post('admin/store_dessert', 'Store')->name('store_dessert');
+        Route::get('admin/edit_dessert/{dessert_id}', 'Edit')->name('edit_dessert');
+        Route::post('admin/update_dessert/{dessert_id}', 'Update')->name('update_dessert');
+        Route::delete('admin/delete_dessert/{dessert_id}', 'Delete')->name('delete_dessert');
+        Route::get('admin/dessert_script', 'DessertScript')->name('dessert_script');
+    });
 
 });

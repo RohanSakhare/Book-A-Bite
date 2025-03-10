@@ -44,13 +44,15 @@
                                         <div class="text-danger">{{ $message }}</div>
                                     @enderror
                                 </div>
-                                <div class="col-lg-6 col-md-6  col-12 text-center mt-md-3 mt-3 mt-lg-0">
-                                    <span>previous img</span>
+                                <div class=" col-lg-6 col-md-6  col-12 text-center mt-md-3 mt-3 mt-lg-0">
+                                    <div>
+                                        <label for="Image" class="form-label">Previous Image :</label>
+                                    </div>
                                     <img src="{{ asset($data->image) }}" alt="image"
-                                        class="img-fluid img-thumbnail shadow" style="width: 200px;">
+                                        class="img-fluid img-thumbnail shadow" style="width: 300px;">
                                 </div>
 
-                                <div class="col-lg-6 col-md-12 col-12 mt-3">
+                                <div class="mb-3 col-lg-6 col-md-12 col-12 ">
                                     <div class="form-group">
                                         <label for="title" class="form-label">Title</label>
                                         <input type="text" name="title" id="title" class="form-control"
@@ -73,9 +75,7 @@
                                         <div class="text-danger">{{ $message }}</div>
                                     @enderror
                                 </div>
-
                             </div>
-
                             <button type="submit" class="btn btn-primary mt-4">Update</button>
                         </form>
                     </div>

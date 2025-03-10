@@ -129,3 +129,103 @@ document.getElementById('time').addEventListener('input', function (e) {
     }
 });
 
+
+
+
+
+//  form selection table
+// js
+
+document.querySelectorAll('.table').forEach(table => {
+    table.addEventListener('click', function () {
+        // Remove selection from all tables
+        document.querySelectorAll('.table').forEach(t => t.classList.remove('selected'));
+
+        // Select the clicked table
+        this.classList.add('selected');
+
+        // Store the selected table ID in a hidden input
+        document.getElementById('table_id').value = this.getAttribute('data-table-id');
+    });
+});
+
+document.getElementById('date').addEventListener('change', function () {
+    const date = this.value;
+    const time = document.getElementById('time').value;
+
+    fetch(`/check-availability?date=${date}&time=${time}`)
+        .then(response => response.json())
+        .then(data => {
+            if (data.available) {
+                alert('Tables are available!');
+            } else {
+                alert('No tables available at this time.');
+            }
+        });
+});
+
+
+document.getElementById('bookingForm').addEventListener('submit', function (e) {
+    e.preventDefault(); // Prevent the default form submission
+
+    const form = e.target;
+    const formData = new FormData(form);
+
+    fetch(form.action, {
+        method: 'POST',
+        body: formData,
+        headers: {
+            'X-CSRF-TOKEN': '{{ csrf_token() }}',
+            'Accept': 'application/json'
+        }
+    })
+        .then(response => response.json())
+        .then(data => {
+            if (data.status === 'success') {
+                // Show success SweetAlert
+                Swal.fire({
+                    title: 'Success!',
+                    text: data.message,
+                    icon: 'success',
+                    confirmButtonText: 'Close'
+                }).then(() => {
+                    // Optionally, redirect or reset the form
+                    window.location.href = '/';
+                });
+            } else if (data.status === 'error') {
+                // Show error SweetAlert for validation errors
+                let errorMessages = '';
+                for (const field in data.errors) {
+                    errorMessages += 'Select a Table Required';
+                }
+                Swal.fire({
+                    title: 'Error!',
+                    html: errorMessages,
+                    icon: 'error',
+                    confirmButtonText: 'Close'
+                });
+            }
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            Swal.fire({
+                title: 'Error!',
+                text: 'An unexpected error occurred.',
+                icon: 'error',
+                confirmButtonText: 'Close'
+            });
+        });
+});
+
+
+
+document.addEventListener('DOMContentLoaded', function () {
+    const form = document.querySelector('#bookingForm');
+    const submitButton = document.querySelector('button[type="submit"]');
+    form.addEventListener('submit', function () {
+        submitButton.disabled = true;
+        submitButton.innerHTML = 'Submitting...'; // Optional: Change button text
+    });
+});
+
+

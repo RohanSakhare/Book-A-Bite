@@ -26,7 +26,7 @@
                 </div>
                 <div class="card shadow">
                     <div class="card-body pt-3">
-                        <form action="{{ route('store_appetizer') }}" method="POST" enctype="multipart/form-data">
+                        <form action="{{ route('store_main_course') }}" method="POST" enctype="multipart/form-data">
                             @csrf
                             <div class="row">
                                 <div class="mb-3 col-lg-6 col-12">

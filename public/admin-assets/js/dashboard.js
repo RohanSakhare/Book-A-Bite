@@ -368,3 +368,22 @@ document.querySelectorAll('.submit-button, .social-button').forEach(button => {
 });
 
 // login end
+
+
+//
+// 333333333333333333333333###############################################
+//sidebar links
+function toggleDropdown(element) {
+    const arrow = element.querySelector('.dropdown-arrow');
+    const isExpanded = element.getAttribute('aria-expanded') === 'true';
+
+    if (isExpanded) {
+        arrow.classList.add('rotate-right');
+        arrow.classList.remove('rotate-top');
+    } else {
+        arrow.classList.remove('rotate-right');
+        arrow.classList.add('rotate-top');
+    }
+
+    element.setAttribute('aria-expanded', !isExpanded);
+}
