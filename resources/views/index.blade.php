@@ -24,7 +24,7 @@
                                     </h1>
                                     <a href="#form" class="btn btn-primary rounded-pill py-sm-3 px-sm-5">Book
                                         Table</a>
-                                    <a href="" class="btn btn-secondary rounded-pill py-sm-3 px-sm-5 ms-3">View
+                                    <a href="{{ route('menu') }}" class="btn btn-secondary rounded-pill py-sm-3 px-sm-5 ms-3">View
                                         Menu</a>
                                 </div>
                             </div>

@@ -86,6 +86,7 @@ class BookingController extends Controller
                 'message' => 'Booking confirmed!'
             ]);
         } catch (\Illuminate\Validation\ValidationException $e) {
+            
             // Return validation errors as JSON
             return response()->json([
                 'status' => 'error',

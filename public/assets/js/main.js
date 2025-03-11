@@ -171,6 +171,19 @@ document.getElementById('bookingForm').addEventListener('submit', function (e) {
     const form = e.target;
     const formData = new FormData(form);
 
+     // Show loading SweetAlert
+     Swal.fire({
+        title: 'Submitting...',
+        text: 'Please wait while we process your booking.',
+        icon: 'info',
+        allowOutsideClick: false,
+        showConfirmButton: false,
+        willOpen: () => {
+            Swal.showLoading();
+        }
+    });
+
+
     fetch(form.action, {
         method: 'POST',
         body: formData,
@@ -224,7 +237,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const submitButton = document.querySelector('button[type="submit"]');
     form.addEventListener('submit', function () {
         submitButton.disabled = true;
-        submitButton.innerHTML = 'Submitting...'; // Optional: Change button text
+        submitButton.innerHTML = 'Submitting...';
     });
 });
 
