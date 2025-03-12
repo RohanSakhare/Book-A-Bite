@@ -33,7 +33,7 @@
                     <div class="section-header text-start mb-5 wow fadeInUp" data-wow-delay="0.1s"
                         style="max-width: 500px;">
                         <h1 class="display-5 mb-3">Our Specialties</h1>
-                        <p>Explore our delicious menu, crafted with fresh ingredients and passion. From appetizers to
+                        <p>Explore our delicious menu, crafted with fresh ingredients and passion. From stater to
                             desserts, we have something for everyone.</p>
                     </div>
                 </div>
@@ -41,7 +41,7 @@
                     <ul class="nav nav-pills d-inline-flex justify-content-end mb-5">
                         <li class="nav-item me-2">
                             <a class="btn btn-outline-primary border-2 active" data-bs-toggle="pill"
-                                href="#tab-1">Appetizers</a>
+                                href="#tab-1">Stater</a>
                         </li>
                         <li class="nav-item me-2">
                             <a class="btn btn-outline-primary border-2" data-bs-toggle="pill" href="#tab-2">Main
@@ -55,7 +55,7 @@
                 </div>
             </div>
             <div class="tab-content">
-                <!-- Appetizers Tab -->
+                <!-- stater Tab -->
                 <div id="tab-1" class="tab-pane fade show p-0 active">
                     <div class="row g-4">
                         <div class="col-xl-3 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
@@ -91,7 +91,7 @@
 
                             </div>
                         </div>
-                        <!-- Add more appetizers here -->
+                        <!-- Add more stater here -->
                     </div>
                 </div>
 
