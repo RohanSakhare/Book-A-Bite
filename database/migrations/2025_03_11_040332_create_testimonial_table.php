@@ -14,7 +14,11 @@ return new class extends Migration
     public function up()
     {
         Schema::create('testimonial', function (Blueprint $table) {
-            $table->id();
+            $table->id('testimonial_id');
+            $table->string('image');
+            $table->string('name');
+            $table->string('profession');
+            $table->longText('review');
             $table->timestamps();
         });
     }

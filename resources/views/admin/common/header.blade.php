@@ -1,7 +1,8 @@
   {{-- spinner start  --}}
-    <div id="preloader">
-        <span class="loader"></span>
-    </div>
+  <div id="preloader">
+      <span class="loader"></span>
+  </div>
+
   {{-- spinner end  --}}
 
   <!--  Body Wrapper -->

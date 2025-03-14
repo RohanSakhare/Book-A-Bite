@@ -12,7 +12,7 @@
               </div>
               <!-- Sidebar navigation-->
               <nav class="sidebar-nav scroll-sidebar" data-simplebar="">
-                <ul id="sidebarnav">
+                  <ul id="sidebarnav">
                       <li class="nav-small-cap">
                           <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
                           <span class="hide-menu">Home</span>
@@ -60,16 +60,18 @@
                               </span>
                           </a>
                           <ul aria-expanded="false" class="collapse first-level ms-4 w-75">
-                            <li class="sidebar-item">
-                                <a class="sidebar-link {{ request()->is('admin/appetizer', 'admin/add_appetizer', 'admin/edit_appetizer/*') ? 'active' : '' }}" href="{{ route('appetizer') }}" aria-expanded="false">
-                                    <span>
-                                        <i class="ti ti-article"></i>
-                                    </span>
-                                    <span class="hide-menu">Appetizer</span>
-                                </a>
-                            </li>
                               <li class="sidebar-item">
-                                  <a href="{{ route('main_course') }}" class="sidebar-link {{ request()->is('main_course') ? 'active' : '' }}">
+                                  <a class="sidebar-link {{ request()->is('admin/appetizer', 'admin/add_appetizer', 'admin/edit_appetizer/*') ? 'active' : '' }}"
+                                      href="{{ route('appetizer') }}" aria-expanded="false">
+                                      <span>
+                                          <i class="ti ti-article"></i>
+                                      </span>
+                                      <span class="hide-menu">Appetizer</span>
+                                  </a>
+                              </li>
+                              <li class="sidebar-item">
+                                  <a href="{{ route('main_course') }}"
+                                      class="sidebar-link {{ request()->is('main_course') ? 'active' : '' }}">
                                       <span>
                                           <i class="ti ti-tools-kitchen-2"></i>
                                       </span>
@@ -77,7 +79,8 @@
                                   </a>
                               </li>
                               <li class="sidebar-item">
-                                  <a href="{{ route('dessert') }}" class="sidebar-link {{ request()->is('dessert') ? 'active' : '' }}">
+                                  <a href="{{ route('dessert') }}"
+                                      class="sidebar-link {{ request()->is('dessert') ? 'active' : '' }}">
                                       <span>
                                           <i class="ti ti-milkshake"></i>
                                       </span>
@@ -89,29 +92,30 @@
 
 
                       <li class="sidebar-item">
-                          <a class="sidebar-link" href="./ui-forms.html" aria-expanded="false">
+                          <a class="sidebar-link  {{ request()->is('admin/testimonial','admin/add_testimonial' ,'admin/edit_testimonial/*') ? 'active' : '' }}"
+                              href="{{ route('testimonialadmin') }}" aria-expanded="false">
                               <span>
-                                  <i class="ti ti-file-description"></i>
+                                <i class="ti ti-message"></i>
                               </span>
                               <span class="hide-menu">Testimonial</span>
                           </a>
                       </li>
                       <li class="sidebar-item">
-                          <a class="sidebar-link" href="./ui-typography.html" aria-expanded="false">
+                          <a class="sidebar-link" href="" aria-expanded="false">
                               <span>
-                                  <i class="ti ti-typography"></i>
+                                <i class="ti ti-address-book"></i>
                               </span>
                               <span class="hide-menu">Contact Us</span>
                           </a>
                       </li>
                       <li class="sidebar-item">
-                        <a class="sidebar-link" href="./ui-typography.html" aria-expanded="false">
-                            <span>
-                                <i class="ti ti-typography"></i>
-                            </span>
-                            <span class="hide-menu">Our Features</span>
-                        </a>
-                    </li>
+                          <a class="sidebar-link" href="" aria-expanded="false">
+                              <span>
+                                <i class="ti ti-settings-check"></i>
+                              </span>
+                              <span class="hide-menu">Our Features</span>
+                          </a>
+                      </li>
                       <li class="nav-small-cap">
                           <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
                           <span class="hide-menu">AUTH</span>

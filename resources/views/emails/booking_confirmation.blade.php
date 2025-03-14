@@ -4,7 +4,7 @@
 <p>Dear <b>{{ $booking->name }}</b>,</p>
 
 <p>We are pleased to <b>confirm</b> your table reservation at Book A Bite.
-    please find the details of your booking below:</p>
+    Your Booking Details Are given below:</p>
 <ul>
     <li>
         <b>Date:</b> {{ $booking->date }}
