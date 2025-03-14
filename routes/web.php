@@ -11,6 +11,7 @@ use GuzzleHttp\Psr7\Header;
 use App\Http\Controllers\Admin\BookingController;
 use App\Http\Controllers\Admin\MainCourseController;
 use App\Http\Controllers\Admin\DessertController;
+use App\Http\Controllers\Admin\TestimonialController;
 
 /*
 |--------------------------------------------------------------------------
@@ -102,6 +103,17 @@ Route::middleware(['isLoggedIn', 'preventBackHistory'])->group(function () {
         Route::post('admin/update_dessert/{dessert_id}', 'Update')->name('update_dessert');
         Route::delete('admin/delete_dessert/{dessert_id}', 'Delete')->name('delete_dessert');
         Route::get('admin/dessert_script', 'DessertScript')->name('dessert_script');
+    });
+
+    // testimonial section
+    Route::controller(TestimonialController::class)->group(function () {
+        Route::get('admin/testimonial', 'TestimonialAdmin')->name('testimonialadmin');
+        Route::get('admin/add_testimonial', 'Add')->name('add_testimonial');
+        Route::post('admin/store_testimonial', 'Store')->name('store_testimonial');
+        Route::get('admin/edit_testimonial/{testimonial_id}', 'Edit')->name('edit_testimonial');
+        Route::post('admin/update_testimonial/{testimonial_id}', 'Update')->name('update_testimonial');
+        Route::delete('admin/delete_testimonial/{testimonial_id}', 'Delete')->name('delete_testimonial');
+        Route::get('admin/testimonial_script', 'TestimonialScript')->name('testimonial_script');
     });
 
 });

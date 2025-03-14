@@ -127,7 +127,7 @@ class MainCourseController extends Controller
         if (File::exists(public_path($maincourse->image))) {
             File::delete(public_path($maincourse->image));
         }
-        session()->flash('success', 'Data has been added successfully!');
+        session()->flash('success', 'Data has been Deleted successfully!');
         return redirect('admin/main_course');
     }
 

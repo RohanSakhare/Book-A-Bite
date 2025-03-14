@@ -39,7 +39,7 @@ class DessertController extends Controller
         }
         return view('admin/dessert/dessert');
     }
-    
+
     public function Dessert()
     {
         return view('admin/dessert/dessert');
@@ -126,7 +126,7 @@ class DessertController extends Controller
         if (File::exists(public_path($dessert->image))) {
             File::delete(public_path($dessert->image));
         }
-        session()->flash('success', 'Data has been added successfully!');
+        session()->flash('success', 'Data has been Deleted successfully!');
         return redirect('admin/dessert');
     }
 

@@ -119,7 +119,7 @@ class HeaderController extends Controller
         if (File::exists(public_path($header->image))) {
             File::delete(public_path($header->image));
         }
-        session()->flash('success', 'Data has been added successfully!');
+        session()->flash('success', 'Data has been Deleted successfully!');
         return redirect('admin/header');
     }
 }
