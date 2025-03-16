@@ -92,26 +92,26 @@
 
 
                       <li class="sidebar-item">
-                          <a class="sidebar-link  {{ request()->is('admin/testimonial','admin/add_testimonial' ,'admin/edit_testimonial/*') ? 'active' : '' }}"
+                          <a class="sidebar-link  {{ request()->is('admin/testimonial', 'admin/add_testimonial', 'admin/edit_testimonial/*') ? 'active' : '' }}"
                               href="{{ route('testimonialadmin') }}" aria-expanded="false">
                               <span>
-                                <i class="ti ti-message"></i>
+                                  <i class="ti ti-message"></i>
                               </span>
                               <span class="hide-menu">Testimonial</span>
                           </a>
                       </li>
                       <li class="sidebar-item">
-                          <a class="sidebar-link" href="" aria-expanded="false">
+                          <a class="sidebar-link" href="{{ route('contactus') }}" aria-expanded="false">
                               <span>
-                                <i class="ti ti-address-book"></i>
+                                  <i class="ti ti-address-book"></i>
                               </span>
                               <span class="hide-menu">Contact Us</span>
                           </a>
                       </li>
                       <li class="sidebar-item">
-                          <a class="sidebar-link" href="" aria-expanded="false">
+                          <a class="sidebar-link" href="{{ route('featuresadmin') }}" aria-expanded="false">
                               <span>
-                                <i class="ti ti-settings-check"></i>
+                                  <i class="ti ti-settings-check"></i>
                               </span>
                               <span class="hide-menu">Our Features</span>
                           </a>
