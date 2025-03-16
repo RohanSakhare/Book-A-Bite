@@ -12,6 +12,8 @@ use App\Http\Controllers\Admin\BookingController;
 use App\Http\Controllers\Admin\MainCourseController;
 use App\Http\Controllers\Admin\DessertController;
 use App\Http\Controllers\Admin\TestimonialController;
+use App\Http\Controllers\Admin\ContactController;
+use App\Http\Controllers\Admin\FeaturesController;
 
 /*
 |--------------------------------------------------------------------------
@@ -34,7 +36,7 @@ Route::get('/menu', [HomeController::class, 'Menu'])->name('menu');
 Route::get('/testimonial', [HomeController::class, 'Testimonial'])->name('testimonial');
 Route::get('/contact', [HomeController::class, 'Contact'])->name('contact');
 Route::get('/feature', [HomeController::class, 'Features'])->name('feature');
-
+Route::get('/api/bookings/daily', [BookingController::class, 'getDailyBookings']);
 // razorpay route
 Route::get('/razorpay', [RazorpayController::class, 'index'])->name('razorpay.payment');
 Route::post('/razorpay/payment', [RazorpayController::class, 'processPayment'])->name('razorpay.payment.store');
@@ -69,6 +71,9 @@ Route::middleware(['isLoggedIn', 'preventBackHistory'])->group(function () {
         Route::get('admin/booking_script', 'BookingScript')->name('booking_script');
         Route::get('admin/booking_view/{bookings_id}', 'BookingView')->name('booking_view');
         Route::get('admin/check_availability', 'checkAvailability')->name('check_availability');
+
+        //api
+
     });
 
 
@@ -116,4 +121,24 @@ Route::middleware(['isLoggedIn', 'preventBackHistory'])->group(function () {
         Route::get('admin/testimonial_script', 'TestimonialScript')->name('testimonial_script');
     });
 
+    // contact section
+    Route::controller(ContactController::class)->group(function () {
+        Route::get('admin/contactus', 'Contact')->name('contactus');
+        Route::post('admin/store_contactus', 'Store')->name('store_contactus');
+        Route::delete('admin/delete_contactus/{contactus_id}', 'Delete')->name('delete_contactus');
+        Route::get('admin/contactus_script', 'ContactScript')->name('contactus_script');
+    });
+
+    // feature section
+
+    Route::controller(FeaturesController::class)->group(function () {
+        Route::get('admin/features', 'Features')->name('featuresadmin');
+        Route::get('admin/add_features', 'Add')->name('add_features');
+        Route::post('admin/store_features', 'Store')->name('store_features');
+        Route::get('admin/edit_features/{features_id}', 'Edit')->name('edit_features');
+        Route::post('admin/update_features/{features_id}', 'Update')->name('update_features');
+        Route::delete('admin/delete_features/{features_id}', 'Delete')->name('delete_features');
+        Route::get('admin/features_script', 'FeaturesScript')->name('features_script');
+    });
 });
+

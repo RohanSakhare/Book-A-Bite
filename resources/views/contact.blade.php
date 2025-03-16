@@ -58,30 +58,44 @@
                 </div>
                 <div class="col-lg-7 col-md-12 wow fadeInUp" data-wow-delay="0.5s">
                     <p class="mb-4">The contact form</p>
-                    <form>
+                    <form class="mt-3" action="{{ route('store_contactus') }}" method="post"
+                        enctype="multipart/form-data">
+                        @csrf
                         <div class="row g-3">
                             <div class="col-md-6">
                                 <div class="form-floating">
-                                    <input type="text" class="form-control" id="name" placeholder="Your Name">
+                                    <input type="text" class="form-control" id="name" name="name" placeholder="Your Name">
                                     <label for="name">Your Name</label>
+                                    @error('name')
+                                        <div class="text-danger">{{ $message }}</div>
+                                    @enderror
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-floating">
-                                    <input type="email" class="form-control" id="email" placeholder="Your Email">
-                                    <label for="email">Your Email</label>
+                                    <input type="email" class="form-control" id="mail" name="mail" placeholder="Your mail">
+                                    <label for="email">Your email</label>
+                                    @error('mail')
+                                        <div class="text-danger">{{ $message }}</div>
+                                    @enderror
                                 </div>
                             </div>
                             <div class="col-12">
                                 <div class="form-floating">
-                                    <input type="text" class="form-control" id="subject" placeholder="Subject">
+                                    <input type="text" class="form-control" id="subject" name="subject" placeholder="Subject">
                                     <label for="subject">Subject</label>
+                                    @error('subject')
+                                        <div class="text-danger">{{ $message }}</div>
+                                    @enderror
                                 </div>
                             </div>
                             <div class="col-12">
                                 <div class="form-floating">
-                                    <textarea class="form-control" placeholder="Leave a message here" id="message" style="height: 200px"></textarea>
+                                    <textarea class="form-control" placeholder="Leave a message here" id="message" name="message" style="height: 200px"></textarea>
                                     <label for="message">Message</label>
+                                    @error('message')
+                                        <div class="text-danger">{{ $message }}</div>
+                                    @enderror
                                 </div>
                             </div>
                             <div class="col-12">
@@ -99,7 +113,7 @@
 
     <!-- Google Map Start -->
     <div class="container-xxl px-0 wow fadeInUp" data-wow-delay="0.1s" style="margin-bottom: -6px;">
-        
+
         <iframe class="w-100" style="height: 450px;"
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1876.0942427214243!2d75.3282504059952!3d19.8742614178182!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bdb986e29bdf813%3A0xfe9f37ce9c858a80!2sKranti%20Chowk%2C%20Chhatrapati%20Sambhaji%20Nagar%2C%20Maharashtra!5e0!3m2!1sen!2sin!4v1741014511603!5m2!1sen!2sin"
             width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"

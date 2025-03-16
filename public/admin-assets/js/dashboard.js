@@ -208,6 +208,66 @@ $(function () {
         },
     };
     new ApexCharts(document.querySelector("#earning"), earning).render();
+
+
+
+    new ApexCharts(document.querySelector("#earning"), earning).render();
+
+    // =====================================
+    // Daily Booking
+    // =====================================
+    function fetchDailyBookings() {
+        $.ajax({
+            url: '/api/bookings/daily',
+            method: 'GET',
+            success: function (data) {
+                var dates = data.map(item => item.date);
+                var counts = data.map(item => item.count);
+
+                var dailyBooking = {
+                    chart: {
+                        type: 'line',
+                        height: 350,
+                        foreColor: '#adb0bb',
+                        fontFamily: 'inherit',
+                    },
+                    series: [{
+                        name: 'Bookings',
+                        data: counts
+                    }],
+                    xaxis: {
+                        categories: dates,
+                        labels: {
+                            style: { cssClass: 'grey--text lighten-2--text fill-color' },
+                        },
+                    },
+                    yaxis: {
+                        labels: {
+                            style: { cssClass: 'grey--text lighten-2--text fill-color' },
+                        },
+                    },
+                    stroke: {
+                        curve: 'smooth',
+                        width: 2,
+                    },
+                    markers: {
+                        size: 4,
+                    },
+                    tooltip: {
+                        theme: 'dark',
+                    },
+                };
+
+                var chart = new ApexCharts(document.querySelector("#daily-booking"), dailyBooking);
+                chart.render();
+            },
+            error: function (error) {
+                console.error('Error fetching daily bookings:', error);
+            }
+        });
+    }
+
+    fetchDailyBookings();
 })
 
 

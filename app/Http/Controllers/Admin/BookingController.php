@@ -10,6 +10,8 @@ use App\Mail\BookingConfirmation;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Log;
 
+use Carbon\Carbon;
+
 class BookingController extends Controller
 {
     //
@@ -29,7 +31,7 @@ class BookingController extends Controller
                             <form id="delete-form-' . $row->bookings_id . '" action="' . $delete . '" method="POST" style="display:inline;">
                                 ' . csrf_field() . '
                                 ' . method_field('DELETE') . '
-                                <button type="button" class="delete-button btn btn-danger" onclick="confirmDelete(' . $row->bookings_id . ')">Delete</button>
+                                <button type="button" class="ms-2 delete-button btn btn-danger" onclick="confirmDelete(' . $row->bookings_id . ')">Delete</button>
                             </form>';
                 })
 
@@ -86,7 +88,7 @@ class BookingController extends Controller
                 'message' => 'Booking confirmed!'
             ]);
         } catch (\Illuminate\Validation\ValidationException $e) {
-            
+
             // Return validation errors as JSON
             return response()->json([
                 'status' => 'error',
@@ -126,5 +128,43 @@ class BookingController extends Controller
 
         session()->flash('success', 'Data has been deleted successfully!');
         return redirect('admin/booking');
+    }
+
+
+    public function getDailyBookings()
+    {
+        // Fetch all bookings from the database
+        $bookings = BookingModel::selectRaw('DATE(date) as date, COUNT(*) as count')
+            ->groupBy('date')
+            ->orderBy('date', 'asc')
+            ->get();
+
+        // Determine the date range
+        $startDate = BookingModel::min('date');
+        $endDate = BookingModel::max('date');
+
+        if (!$startDate || !$endDate) {
+            return response()->json([]);
+        }
+
+        $startDate = Carbon::parse($startDate)->startOfDay();
+        $endDate = Carbon::parse($endDate)->endOfDay();
+
+        // Fill in missing dates with zero bookings
+        $dates = [];
+        for ($date = $startDate; $date->lte($endDate); $date->addDay()) {
+            $dates[$date->format('Y-m-d')] = 0;
+        }
+
+        foreach ($bookings as $booking) {
+            $dates[$booking->date] = $booking->count;
+        }
+
+        $formattedBookings = [];
+        foreach ($dates as $date => $count) {
+            $formattedBookings[] = ['date' => $date, 'count' => $count];
+        }
+
+        return response()->json($formattedBookings);
     }
 }
