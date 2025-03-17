@@ -344,7 +344,7 @@
                 <p>What customers say about us</p>
             </div>
             <div class="owl-carousel testimonial-carousel wow fadeInUp" data-wow-delay="0.1s">
-                <div class="testimonial-item position-relative bg-white p-5 mt-4">
+                {{-- <div class="testimonial-item position-relative bg-white p-5 mt-4">
                     <i class="fa fa-quote-left fa-3x text-primary position-absolute top-0 start-0 mt-n4 ms-5"></i>
                     <p class="mb-4">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit diam amet diam et
                         eos. Clita erat ipsum et lorem et sit.</p>
@@ -395,8 +395,8 @@
                             <span>Profession</span>
                         </div>
                     </div>
-                </div>
-                {{-- @foreach ($testimonials as $testimonial)
+                </div> --}}
+                @foreach ($testimonials as $testimonial)
                     <div class="testimonial-item position-relative bg-white p-5 mt-4">
                         <i class="fa fa-quote-left fa-3x text-primary position-absolute top-0 start-0 mt-n4 ms-5"></i>
                         <p class="mb-4">{{ $testimonial->review }}</p>
@@ -409,7 +409,7 @@
                             </div>
                         </div>
                     </div>
-                @endforeach --}}
+                @endforeach
             </div>
         </div>
     </div>
