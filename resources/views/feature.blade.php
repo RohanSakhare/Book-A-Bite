@@ -37,32 +37,14 @@
                     quality and service ensures a memorable experience.</p>
             </div>
             <div class="row g-4">
-                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                    <div class="bg-white text-center h-100 p-4 p-xl-5">
-                        <img class="img-fluid mb-4" src="img/icon-1.png" alt="">
-                        <h4 class="mb-3">Farm-to-Table Freshness</h4>
-                        <p class="mb-4">We source our ingredients directly from local farms to ensure the freshest and
-                            most flavorful dishes. Every bite is a testament to our dedication to quality.</p>
+                @foreach ($features as $feature)
+                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.{{ $loop->iteration * 2 }}s">
+                        <div class="bg-white text-center h-100 p-4 p-xl-5">
+                            <h4 class="mb-3">{{ $feature->title }}</h4>
+                            <p class="mb-4">{{ $feature->description }}</p>
+                        </div>
                     </div>
-                </div>
-                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
-                    <div class="bg-white text-center h-100 p-4 p-xl-5">
-                        <img class="img-fluid mb-4" src="img/icon-2.png" alt="">
-                        <h4 class="mb-3">Seasonal Menus</h4>
-                        <p class="mb-4">Our chefs craft seasonal menus that highlight the best produce available.
-                            Enjoy a variety of dishes that change with the seasons, offering something new and exciting
-                            every visit.</p>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
-                    <div class="bg-white text-center h-100 p-4 p-xl-5">
-                        <img class="img-fluid mb-4" src="img/icon-3.png" alt="">
-                        <h4 class="mb-3">Eco-Friendly Practices</h4>
-                        <p class="mb-4">We are committed to sustainability. From reducing food waste to using
-                            eco-friendly packaging, we strive to minimize our environmental impact while delivering
-                            exceptional dining experiences.</p>
-                    </div>
-                </div>
+                @endforeach
             </div>
         </div>
     </div>

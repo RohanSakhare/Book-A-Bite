@@ -18,9 +18,9 @@
                 </div>
                 <div class="col-lg-4 col-md-6">
                     <h4 class="text-light mb-4">Address</h4>
-                    <p><i class="fa fa-map-marker-alt me-3"></i>123 Street, Chhatrapati Sambhajinagar, Maharashtra</p>
-                    <p><i class="fa-solid fa-phone me-3"></i>+012 345 67890</p>
-                    <p><i class="fa fa-envelope me-3"></i>xyz@gmail.com</p>
+                    <p><i class="fa fa-map-marker-alt me-3"></i>M2 Road, Chhatrapati Sambhajinagar, Maharashtra</p>
+                    <p><i class="fa-solid fa-phone me-3"></i>+91 9679634533</p>
+                    <p><i class="fa fa-envelope me-3"></i>bookabite@gmail.com</p>
                 </div>
                 <div class="col-lg-4 col-md-6">
                     <h4 class="text-light mb-4">Quick Links</h4>

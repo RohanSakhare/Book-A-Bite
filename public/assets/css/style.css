@@ -455,8 +455,13 @@
 
 .testimonial-carousel .owl-nav {
     margin-top: 30px;
-    display: flex;
-    justify-content: center;
+    position: relative;
+    left: 44%;
+    display: inline-block;
+    width: 160px;
+}
+.testimonial-carousel .owl-nav .owl-prev, .testimonial-carousel .owl-nav .owl-next{
+    display: inline-flex;
 }
 
 .testimonial-carousel .owl-nav .owl-prev,
@@ -464,7 +469,7 @@
     margin: 0 12px;
     width: 50px;
     height: 50px;
-    display: flex;
+    /* display: flex; */
     align-items: center;
     justify-content: center;
     color: var(--dark);
@@ -480,6 +485,24 @@
     background: #7400ff;
     border: white;
 }
+
+
+	/* tablet view  */
+	@media (max-width: 768px) {
+
+        .testimonial-carousel .owl-nav {
+            left: 40%;
+        }
+	}
+
+
+	/* mobile view  */
+	@media (max-width: 426px) {
+        .testimonial-carousel .owl-nav {
+            left: 29%;
+        }
+}
+
 
 
 /*** Footer ***/
