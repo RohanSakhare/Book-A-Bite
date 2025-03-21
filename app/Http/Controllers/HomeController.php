@@ -9,6 +9,7 @@ use App\Models\AppetizersModel;
 use App\Models\MainCourseModel;
 use App\Models\DessertModel;
 use App\Models\TestimonialModel;
+use App\Models\FearturesModel;
 
 class HomeController extends Controller
 {
@@ -30,12 +31,18 @@ class HomeController extends Controller
 
     public function Menu()
     {
-        return view('menu');
+        $appetizers = AppetizersModel::all();
+        $mainCourses = MainCourseModel::all();
+        $desserts = DessertModel::all();
+        $testimonials = TestimonialModel::all();
+
+        return view('menu', compact('appetizers', 'mainCourses', 'desserts', 'testimonials'));
     }
 
     public function Testimonial()
     {
-        return view('testimonial');
+        $testimonials = TestimonialModel::all();
+        return view('testimonial',compact('testimonials'));
     }
 
     public function Contact()
@@ -45,6 +52,7 @@ class HomeController extends Controller
 
     public function Features()
     {
-        return view('feature');
+        $features = FearturesModel::all();
+        return view('feature', compact('features'));
     }
 }

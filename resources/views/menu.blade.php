@@ -55,163 +55,78 @@
                 </div>
             </div>
             <div class="tab-content">
-                <!-- stater Tab -->
+                <!-- Starter Tab -->
                 <div id="tab-1" class="tab-pane fade show p-0 active">
                     <div class="row g-4">
-                        <div class="col-xl-3 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                            <div class="product-item shadow">
-                                <div class="position-relative bg-light overflow-hidden">
-                                    <img class="im manu-img g-fluid w-100" src="img/menu/starter/Veg Manchurian.jpg"
-                                        alt="Bruschetta">
-                                    <div
-                                        class="bg-secondary rounded text-white position-absolute start-0 top-0 m-4 py-1 px-3">
-                                        New</div>
-                                </div>
-                                <div class="text-center p-4">
-                                    <a class="d-block h5 mb-2" href="">Veg Manchurian</a>
-                                    <span class="text-primary me-1">$8.99</span>
-                                    <span class="text-body text-decoration-line-through">$10.99</span>
+                        @foreach ($appetizers as $appetizer)
+                            <div class="col-xl-3 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                                <div class="product-item shadow">
+                                    <div class="position-relative bg-light overflow-hidden">
+                                        <img class="img-fluid manu-img w-100" src="{{ asset($appetizer->image) }}"
+                                            alt="{{ $appetizer->title }}">
+                                        <div
+                                            class="bg-secondary rounded text-white position-absolute start-0 top-0 m-4 py-1 px-3">
+                                            New</div>
+                                    </div>
+                                    <div class="text-center p-4">
+                                        <a class="d-block h5 mb-2" href="">{{ $appetizer->title }}</a>
+                                        <span class="text-primary me-1">₹{{ $appetizer->price_now }}</span>
+                                        <span
+                                            class="text-body text-decoration-line-through">₹{{ $appetizer->price_before }}</span>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="col-xl-3 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
-                            <div class="product-item shadow">
-                                <div class="position-relative bg-light overflow-hidden">
-                                    <img class="img-fluid manu-img w-100" src="img/menu/starter/chicken 65.jpeg"
-                                        alt="Spring Rolls">
-                                    <div
-                                        class="bg-secondary rounded text-white position-absolute start-0 top-0 m-4 py-1 px-3">
-                                        New</div>
-                                </div>
-                                <div class="text-center p-4">
-                                    <a class="d-block h5 mb-2" href="">chicken 65</a>
-                                    <span class="text-primary me-1">$7.99</span>
-                                    <span class="text-body text-decoration-line-through">$9.99</span>
-                                </div>
-
-                            </div>
-                        </div>
-                        <!-- Add more stater here -->
+                        @endforeach
                     </div>
                 </div>
 
                 <!-- Main Course Tab -->
                 <div id="tab-2" class="tab-pane fade show p-0">
                     <div class="row g-4">
-                        <div class="col-xl-3 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                            <div class="product-item">
-                                <div class="position-relative bg-light overflow-hidden">
-                                    <img class="img-fluid manu-img w-100" src="img/grilled-salmon.jpg"
-                                        alt="Grilled Salmon">
-                                    <div
-                                        class="bg-secondary rounded text-white position-absolute start-0 top-0 m-4 py-1 px-3">
-                                        New</div>
-                                </div>
-                                <div class="text-center p-4">
-                                    <a class="d-block h5 mb-2" href="">Grilled Salmon</a>
-                                    <span class="text-primary me-1">$18.99</span>
-                                    <span class="text-body text-decoration-line-through">$22.99</span>
-                                </div>
-                                <div class="d-flex border-top">
-                                    <small class="w-50 text-center border-end py-2">
-                                        <a class="text-body" href=""><i
-                                                class="fa fa-eye text-primary me-2"></i>View
-                                            Details</a>
-                                    </small>
-                                    <small class="w-50 text-center py-2">
-                                        <a class="text-body" href=""><i
-                                                class="fa fa-shopping-bag text-primary me-2"></i>Add to Order</a>
-                                    </small>
+                        @foreach ($mainCourses as $mainCourse)
+                            <div class="col-xl-3 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                                <div class="product-item shadow">
+                                    <div class="position-relative bg-light overflow-hidden">
+                                        <img class="img-fluid manu-img w-100" src="{{ asset($mainCourse->image) }}"
+                                            alt="{{ $mainCourse->title }}">
+                                        <div
+                                            class="bg-secondary rounded text-white position-absolute start-0 top-0 m-4 py-1 px-3">
+                                            New</div>
+                                    </div>
+                                    <div class="text-center p-4">
+                                        <a class="d-block h5 mb-2" href="">{{ $mainCourse->title }}</a>
+                                        <span class="text-primary me-1">₹{{ $mainCourse->price_now }}</span>
+                                        <span
+                                            class="text-body text-decoration-line-through">₹{{ $mainCourse->price_before }}</span>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="col-xl-3 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
-                            <div class="product-item">
-                                <div class="position-relative bg-light overflow-hidden">
-                                    <img class="img-fluid manu-img w-100" src="img/steak.jpg" alt="Steak">
-                                    <div
-                                        class="bg-secondary rounded text-white position-absolute start-0 top-0 m-4 py-1 px-3">
-                                        New</div>
-                                </div>
-                                <div class="text-center p-4">
-                                    <a class="d-block h5 mb-2" href="">Grilled Steak</a>
-                                    <span class="text-primary me-1">$24.99</span>
-                                    <span class="text-body text-decoration-line-through">$29.99</span>
-                                </div>
-                                <div class="d-flex border-top">
-                                    <small class="w-50 text-center border-end py-2">
-                                        <a class="text-body" href=""><i
-                                                class="fa fa-eye text-primary me-2"></i>View
-                                            Details</a>
-                                    </small>
-                                    <small class="w-50 text-center py-2">
-                                        <a class="text-body" href=""><i
-                                                class="fa fa-shopping-bag text-primary me-2"></i>Add to Order</a>
-                                    </small>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Add more main courses here -->
+                        @endforeach
                     </div>
                 </div>
 
                 <!-- Desserts Tab -->
                 <div id="tab-3" class="tab-pane fade show p-0">
                     <div class="row g-4">
-                        <div class="col-xl-3 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                            <div class="product-item">
-                                <div class="position-relative bg-light overflow-hidden">
-                                    <img class="img-fluid manu-img  w-100" src="img/chocolate-cake.jpg"
-                                        alt="Chocolate Cake">
-                                    <div
-                                        class="bg-secondary rounded text-white position-absolute start-0 top-0 m-4 py-1 px-3">
-                                        New</div>
-                                </div>
-                                <div class="text-center p-4">
-                                    <a class="d-block h5 mb-2" href="">Chocolate Cake</a>
-                                    <span class="text-primary me-1">$6.99</span>
-                                    <span class="text-body text-decoration-line-through">$8.99</span>
-                                </div>
-                                <div class="d-flex border-top">
-                                    <small class="w-50 text-center border-end py-2">
-                                        <a class="text-body" href=""><i
-                                                class="fa fa-eye text-primary me-2"></i>View
-                                            Details</a>
-                                    </small>
-                                    <small class="w-50 text-center py-2">
-                                        <a class="text-body" href=""><i
-                                                class="fa fa-shopping-bag text-primary me-2"></i>Add to Order</a>
-                                    </small>
+                        @foreach ($desserts as $dessert)
+                            <div class="col-xl-3 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                                <div class="product-item shadow">
+                                    <div class="position-relative bg-light overflow-hidden">
+                                        <img class="img-fluid manu-img w-100" src="{{ asset($dessert->image) }}"
+                                            alt="{{ $dessert->title }}">
+                                        <div
+                                            class="bg-secondary rounded text-white position-absolute start-0 top-0 m-4 py-1 px-3">
+                                            New</div>
+                                    </div>
+                                    <div class="text-center p-4">
+                                        <a class="d-block h5 mb-2" href="">{{ $dessert->title }}</a>
+                                        <span class="text-primary me-1">₹{{ $dessert->price_now }}</span>
+                                        <span
+                                            class="text-body text-decoration-line-through">₹{{ $dessert->price_before }}</span>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="col-xl-3 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
-                            <div class="product-item">
-                                <div class="position-relative bg-light overflow-hidden">
-                                    <img class="img-fluid manu-img w-100" src="img/tiramisu.jpg" alt="Tiramisu">
-                                    <div
-                                        class="bg-secondary rounded text-white position-absolute start-0 top-0 m-4 py-1 px-3">
-                                        New</div>
-                                </div>
-                                <div class="text-center p-4">
-                                    <a class="d-block h5 mb-2" href="">Tiramisu</a>
-                                    <span class="text-primary me-1">$7.99</span>
-                                    <span class="text-body text-decoration-line-through">$9.99</span>
-                                </div>
-                                <div class="d-flex border-top">
-                                    <small class="w-50 text-center border-end py-2">
-                                        <a class="text-body" href=""><i
-                                                class="fa fa-eye text-primary me-2"></i>View
-                                            Details</a>
-                                    </small>
-                                    <small class="w-50 text-center py-2">
-                                        <a class="text-body" href=""><i
-                                                class="fa fa-shopping-bag text-primary me-2"></i>Add to Order</a>
-                                    </small>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Add more desserts here -->
+                        @endforeach
                     </div>
                 </div>
             </div>
@@ -228,54 +143,20 @@
                 <p>What customers say about us</p>
             </div>
             <div class="owl-carousel testimonial-carousel wow fadeInUp" data-wow-delay="0.1s">
-                <div class="testimonial-item position-relative bg-white p-5 mt-4">
-                    <i class="fa fa-quote-left fa-3x text-primary position-absolute top-0 start-0 mt-n4 ms-5"></i>
-                    <p class="mb-4">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit diam amet diam et
-                        eos. Clita erat ipsum et lorem et sit.</p>
-                    <div class="d-flex align-items-center">
-                        <img class="flex-shrink-0 rounded-circle" src="img/testimonial-1.jpg" alt="">
-                        <div class="ms-3">
-                            <h5 class="mb-1">Client Name</h5>
-                            <span>Profession</span>
+                @foreach ($testimonials as $testimonial)
+                    <div class="testimonial-item position-relative bg-white p-5 mt-4">
+                        <i class="fa fa-quote-left fa-3x text-primary position-absolute top-0 start-0 mt-n4 ms-5"></i>
+                        <p class="mb-4">{{ $testimonial->review }}</p>
+                        <div class="d-flex align-items-center">
+                            <img class="flex-shrink-0 rounded-circle" src="{{ asset($testimonial->image) }}"
+                                alt="{{ $testimonial->name }}">
+                            <div class="ms-3">
+                                <h5 class="mb-1">{{ $testimonial->name }}</h5>
+                                <span>{{ $testimonial->profession }}</span>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="testimonial-item position-relative bg-white p-5 mt-4">
-                    <i class="fa fa-quote-left fa-3x text-primary position-absolute top-0 start-0 mt-n4 ms-5"></i>
-                    <p class="mb-4">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit diam amet diam et
-                        eos. Clita erat ipsum et lorem et sit.</p>
-                    <div class="d-flex align-items-center">
-                        <img class="flex-shrink-0 rounded-circle" src="img/testimonial-2.jpg" alt="">
-                        <div class="ms-3">
-                            <h5 class="mb-1">Client Name</h5>
-                            <span>Profession</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="testimonial-item position-relative bg-white p-5 mt-4">
-                    <i class="fa fa-quote-left fa-3x text-primary position-absolute top-0 start-0 mt-n4 ms-5"></i>
-                    <p class="mb-4">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit diam amet diam et
-                        eos. Clita erat ipsum et lorem et sit.</p>
-                    <div class="d-flex align-items-center">
-                        <img class="flex-shrink-0 rounded-circle" src="img/testimonial-3.jpg" alt="">
-                        <div class="ms-3">
-                            <h5 class="mb-1">Client Name</h5>
-                            <span>Profession</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="testimonial-item position-relative bg-white p-5 mt-4">
-                    <i class="fa fa-quote-left fa-3x text-primary position-absolute top-0 start-0 mt-n4 ms-5"></i>
-                    <p class="mb-4">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit diam amet diam et
-                        eos. Clita erat ipsum et lorem et sit.</p>
-                    <div class="d-flex align-items-center">
-                        <img class="flex-shrink-0 rounded-circle" src="img/testimonial-4.jpg" alt="">
-                        <div class="ms-3">
-                            <h5 class="mb-1">Client Name</h5>
-                            <span>Profession</span>
-                        </div>
-                    </div>
-                </div>
+                @endforeach
             </div>
         </div>
     </div>
