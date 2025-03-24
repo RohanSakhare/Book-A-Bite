@@ -18,7 +18,7 @@
                 <h1 class="display-3 mb-3 animated slideInDown">About Us</h1>
                 <nav aria-label="breadcrumb animated slideInDown">
                     <ol class="breadcrumb mb-0">
-                        <li class="breadcrumb-item"><a class="text-body" href="#">Home</a></li>
+                        <li class="breadcrumb-item"><a class="text-body" href="{{ route('home') }}">Home</a></li>
                         <li class="breadcrumb-item text-dark active" aria-current="page">About Us</li>
                     </ol>
                 </nav>
@@ -68,7 +68,7 @@
                     exceptional service, we’ve got it all.</p>
             </div>
 
-            <div class="row g-4">
+            <div class="row g-4 justify-content-center">
                 <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
                     <div class="bg-white text-center h-100 features_container shadow">
                         <img class="img-fluid features_img  mb-4" src="{{ asset('assets/img/features/fresh.jpg') }}"

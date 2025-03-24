@@ -238,7 +238,7 @@ a {
 }
 
 a:hover {
-    color: #309311
+    color: #7400ff;
 }
 
 a:not([href]):not([class]),
@@ -4755,7 +4755,7 @@ fieldset:disabled .btn {
 
 .navbar-light .navbar-toggler {
     color: rgba(255, 255, 255, 0.55);
-    border-color: rgba(255, 255, 255, 0.1)
+    border-color: rgba(68, 117, 148, 0.1)
 }
 
 .navbar-light .navbar-toggler-icon {

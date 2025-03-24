@@ -15,7 +15,7 @@
             <h1 class="display-3 mb-3 animated slideInDown">Testimonial</h1>
             <nav aria-label="breadcrumb animated slideInDown">
                 <ol class="breadcrumb mb-0">
-                    <li class="breadcrumb-item"><a class="text-body" href="#">Home</a></li>
+                    <li class="breadcrumb-item"><a class="text-body" href="{{ route('home') }}">Home</a></li>
                     <li class="breadcrumb-item text-dark active" aria-current="page">Testimonial</li>
                 </ol>
             </nav>
@@ -30,7 +30,7 @@
             <div class="section-header text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s"
                 style="max-width: 500px;">
                 <h1 class="display-5 mb-3">Customer Review</h1>
-                <p>Tempor ut dolore lorem kasd vero ipsum sit eirmod sit. Ipsum diam justo sed rebum vero dolor duo.</p>
+                <p>What customers say about us</p>
             </div>
             <div class="owl-carousel testimonial-carousel wow fadeInUp" data-wow-delay="0.1s">
                 @foreach ($testimonials as $testimonial)

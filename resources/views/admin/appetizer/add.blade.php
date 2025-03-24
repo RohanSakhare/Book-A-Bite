@@ -46,7 +46,7 @@
                                 </div>
                                 <div class="mb-3 col-lg-6 col-12">
                                     <label for="price_now" class="form-label">New Price</label>
-                                    <input type="text" class="form-control" name="price_now" id="price_now"
+                                    <input type="number" class="form-control" name="price_now" id="price_now"
                                         placeholder="price_now">
                                     @error('price_now')
                                         <div class="text-danger">{{ $message }}</div>
@@ -54,7 +54,7 @@
                                 </div>
                                 <div class="mb-3 col-lg-6 col-12">
                                     <label for="price_before" class="form-label">Old Price</label>
-                                    <input type="text" class="form-control" name="price_before" id="price_before"
+                                    <input type="number" class="form-control" name="price_before" id="price_before"
                                         placeholder="price_before">
                                     @error('price_before')
                                         <div class="text-danger">{{ $message }}</div>
