@@ -36,10 +36,10 @@
                 <p>Experience the finest dining with our unique offerings that cater to every palate. Our commitment to
                     quality and service ensures a memorable experience.</p>
             </div>
-            <div class="row g-4">
+            <div class="row g-4 justify-content-center">
                 @foreach ($features as $feature)
                     <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.{{ $loop->iteration * 2 }}s">
-                        <div class="bg-white text-center h-100 p-4 p-xl-5">
+                        <div class="bg-white text-center h-100 p-4 p-xl-5 shadow">
                             <h4 class="mb-3">{{ $feature->title }}</h4>
                             <p class="mb-4">{{ $feature->description }}</p>
                         </div>

@@ -60,7 +60,7 @@
                                     <div class="row">
                                         <div class="col-lg-6 col-md-6 col-12 mb-3">
                                             <label for="name" class="form-label">Your Name</label>
-                                            <input type="text" class="form-control" id="name" name="name"
+                                            <input type="text" class="form-control" id="name" name="name" placeholder="Full Name"
                                                 required>
                                             @error('name')
                                                 <div class="text-danger">{{ $message }}</div>
@@ -68,7 +68,7 @@
                                         </div>
                                         <div class="col-lg-6 col-md-6 col-12 mb-3">
                                             <label for="email" class="form-label">Email Address</label>
-                                            <input type="email" class="form-control" id="email" name="email"
+                                            <input type="email" class="form-control" id="email" name="email" placeholder="Email-Id"
                                                 required>
                                             @error('email')
                                                 <div class="text-danger">{{ $message }}</div>
@@ -76,7 +76,7 @@
                                         </div>
                                         <div class="col-lg-6 col-md-6 col-12 mb-3">
                                             <label for="number" class="form-label">Phone Number</label>
-                                            <input type="number" class="form-control" id="number" pattern="\d{10}"
+                                            <input type="number" class="form-control" id="number" pattern="\d{10}" placeholder="Phone Number"
                                                 maxlength="10" name="number" required>
                                             @error('number')
                                                 <div class="text-danger">{{ $message }}</div>
@@ -109,10 +109,6 @@
                                                 <option value="4">4 People</option>
                                                 <option value="5">5 People</option>
                                                 <option value="6">6 People</option>
-                                                <option value="7">7 People</option>
-                                                <option value="8">8 People</option>
-                                                <option value="9">9 People</option>
-                                                <option value="10">10+ People</option>
                                             </select>
                                             @error('guests')
                                                 <div class="text-danger">{{ $message }}</div>
@@ -152,7 +148,7 @@
 
                                         <div class="col-12 mb-3">
                                             <label for="request" class="form-label">Special Requests</label>
-                                            <textarea class="form-control" id="request" name="request" rows="3"></textarea>
+                                            <textarea class="form-control" id="request" name="request" rows="3" placeholder="Request"></textarea>
                                             @error('request')
                                                 <div class="text-danger">{{ $message }}</div>
                                             @enderror
@@ -187,7 +183,7 @@
 
 
 
-            <div class="row g-4">
+            <div class="row g-4 justify-content-center">
                 <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
                     <div class="bg-white text-center h-100 features_container shadow">
                         <img class="img-fluid features_img  mb-4" src="{{ asset('assets/img/features/fresh.jpg') }}"
@@ -255,38 +251,35 @@
                     </ul>
                 </div>
             </div>
-            <div class="tab-content">
+
+            <div class="tab-content ">
                 <!-- Starter Tab -->
                 <div id="tab-1" class="tab-pane fade show p-0 active">
-                    <div class="row g-4">
+                    <div class="owl-carousel  stater-carousel">
                         @foreach ($appetizers as $appetizer)
-                            <div class="col-xl-3 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                                <div class="product-item shadow">
-                                    <div class="position-relative bg-light overflow-hidden">
-                                        <img class="img-fluid manu-img w-100" src="{{ asset($appetizer->image) }}"
-                                            alt="{{ $appetizer->title }}">
-                                        <div
-                                            class="bg-secondary rounded text-white position-absolute start-0 top-0 m-4 py-1 px-3">
-                                            New</div>
-                                    </div>
-                                    <div class="text-center p-4">
-                                        <a class="d-block h5 mb-2" href="">{{ $appetizer->title }}</a>
-                                        <span class="text-primary me-1">₹{{ $appetizer->price_now }}</span>
-                                        <span
-                                            class="text-body text-decoration-line-through">₹{{ $appetizer->price_before }}</span>
-                                    </div>
+                            <div class="product-item shadow mb-3">
+                                <div class="position-relative bg-light overflow-hidden">
+                                    <img class="img-fluid manu-img w-100" src="{{ asset($appetizer->image) }}"
+                                        alt="{{ $appetizer->title }}">
+                                    <div
+                                        class="bg-secondary rounded text-white position-absolute start-0 top-0 m-4 py-1 px-3">
+                                        New</div>
+                                </div>
+                                <div class="text-center p-4">
+                                    <a class="d-block h5 mb-2" href="javascript:void(0);">{{ $appetizer->title }}</a>
+                                    <span class="text-primary me-1">₹{{ $appetizer->price_now }}</span>
+                                    <span
+                                        class="text-body text-decoration-line-through">₹{{ $appetizer->price_before }}</span>
                                 </div>
                             </div>
                         @endforeach
                     </div>
                 </div>
-
                 <!-- Main Course Tab -->
                 <div id="tab-2" class="tab-pane fade show p-0">
-                    <div class="row g-4">
+                    <div class="owl-carousel  stater-carousel">
                         @foreach ($mainCourses as $mainCourse)
-                            <div class="col-xl-3 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                                <div class="product-item shadow">
+                                <div class="product-item shadow  mb-3">
                                     <div class="position-relative bg-light overflow-hidden">
                                         <img class="img-fluid manu-img w-100" src="{{ asset($mainCourse->image) }}"
                                             alt="{{ $mainCourse->title }}">
@@ -295,23 +288,21 @@
                                             New</div>
                                     </div>
                                     <div class="text-center p-4">
-                                        <a class="d-block h5 mb-2" href="">{{ $mainCourse->title }}</a>
+                                        <a class="d-block h5 mb-2" href="javascript:void(0);">{{ $mainCourse->title }}</a>
                                         <span class="text-primary me-1">₹{{ $mainCourse->price_now }}</span>
                                         <span
                                             class="text-body text-decoration-line-through">₹{{ $mainCourse->price_before }}</span>
                                     </div>
                                 </div>
-                            </div>
                         @endforeach
                     </div>
                 </div>
 
                 <!-- Desserts Tab -->
                 <div id="tab-3" class="tab-pane fade show p-0">
-                    <div class="row g-4">
+                    <div class="owl-carousel  stater-carousel">
                         @foreach ($desserts as $dessert)
-                            <div class="col-xl-3 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                                <div class="product-item shadow">
+                                <div class="product-item shadow mb-3">
                                     <div class="position-relative bg-light overflow-hidden">
                                         <img class="img-fluid manu-img w-100" src="{{ asset($dessert->image) }}"
                                             alt="{{ $dessert->title }}">
@@ -320,13 +311,12 @@
                                             New</div>
                                     </div>
                                     <div class="text-center p-4">
-                                        <a class="d-block h5 mb-2" href="">{{ $dessert->title }}</a>
+                                        <a class="d-block h5 mb-2" href="javascript:void(0);">{{ $dessert->title }}</a>
                                         <span class="text-primary me-1">₹{{ $dessert->price_now }}</span>
                                         <span
                                             class="text-body text-decoration-line-through">₹{{ $dessert->price_before }}</span>
                                     </div>
                                 </div>
-                            </div>
                         @endforeach
                     </div>
                 </div>
@@ -338,7 +328,7 @@
     <!-- Menu End -->
 
     <!-- Testimonial Start -->
-    <div class="container-fluid bg-light bg-icon py-6 ">
+    <div class="container-fluid bg-light bg-icon py-6 " id="testimonial">
         <div class="container">
             <div class="section-header text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s"
                 style="max-width: 500px;">

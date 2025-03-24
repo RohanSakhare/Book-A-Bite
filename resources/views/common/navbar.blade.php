@@ -32,7 +32,7 @@
                 </a>
                 <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse"
                     data-bs-target="#navbarCollapse">
-                    <span class="navbar-toggler-icon"></span>
+                    <i class="fa-solid fa-bars icon-navbar-toller"></i>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarCollapse">
                     <div class="navbar-nav ms-auto p-4 p-lg-0">
@@ -56,19 +56,6 @@
                         </div>
                         <a href="{{ route('contact') }}"
                             class="nav-item nav-link {{ Request::routeIs('contact') ? 'active' : '' }}">Contact Us</a>
-                    </div>
-                    <div class="d-none d-lg-flex ms-2">
-                        <!-- <a class="btn-sm-square bg-white rounded-circle ms-3" href="">
-                            <small class="fa fa-search text-body"></small>
-                        </a> -->
-                        <a class="user-icon-container btn-sm-square bg-white rounded-circle ms-3" href="">
-                            <small class="fa fa-user text-body "></small>
-                        </a>
-
-                        <a class="cart-icon-container btn-sm-square bg-white rounded-circle ms-3" href="">
-                            <small class="fa fa-shopping-bag text-body"></small>
-                        </a>
-
                     </div>
                 </div>
             </nav>

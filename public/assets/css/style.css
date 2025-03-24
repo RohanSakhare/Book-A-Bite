@@ -90,6 +90,10 @@
 
 /*** Navbar ***/
 
+.icon-navbar-toller {
+    color: #7400ff;
+}
+
 .fixed-top {
     transition: .5s;
 }
@@ -367,15 +371,15 @@
 
 #form .table {
     height: 80px;
-    background-color: var(--bs-primary);
-    color: white;
+    border: 2px solid var(--bs-primary);
     border-radius: 8px;
     cursor: pointer;
 }
 
 #form .table.selected {
-    background-color: var(--bs-teal);
+    background-color: var(--bs-primary);
 
+    color: white;
 }
 
 /*** Features **/
@@ -435,6 +439,10 @@
     height: 60px;
 }
 
+.testimonial-item {
+    height: 250px;
+}
+
 .testimonial-carousel .owl-item .testimonial-item,
 .testimonial-carousel .owl-item .testimonial-item * {
     transition: .5s;
@@ -453,19 +461,24 @@
     color: #7400ff !important;
 }
 
-.testimonial-carousel .owl-nav {
+.testimonial-carousel .owl-nav,
+.stater-carousel .owl-nav {
     margin-top: 30px;
     position: relative;
     left: 44%;
     display: inline-block;
     width: 160px;
 }
-.testimonial-carousel .owl-nav .owl-prev, .testimonial-carousel .owl-nav .owl-next{
+.testimonial-carousel .owl-nav .owl-prev, .testimonial-carousel .owl-nav .owl-next,
+.stater-carousel .owl-nav .owl-prev, .stater-carousel .owl-nav .owl-next{
     display: inline-flex;
 }
 
 .testimonial-carousel .owl-nav .owl-prev,
-.testimonial-carousel .owl-nav .owl-next {
+.testimonial-carousel .owl-nav .owl-next,
+.stater-carousel .owl-nav .owl-prev,
+.stater-carousel .owl-nav .owl-next
+ {
     margin: 0 12px;
     width: 50px;
     height: 50px;
@@ -480,17 +493,21 @@
 }
 
 .testimonial-carousel .owl-nav .owl-prev:hover,
-.testimonial-carousel .owl-nav .owl-next:hover {
+.testimonial-carousel .owl-nav .owl-next:hover,
+.stater-carousel .owl-nav .owl-next:hover,
+.stater-carousel .owl-nav .owl-prev:hover {
     color: #FFFFFF;
     background: #7400ff;
     border: white;
 }
 
 
+
 	/* tablet view  */
 	@media (max-width: 768px) {
 
-        .testimonial-carousel .owl-nav {
+        .testimonial-carousel .owl-nav,
+        .stater-carousel .owl-nav {
             left: 40%;
         }
 	}
@@ -498,7 +515,8 @@
 
 	/* mobile view  */
 	@media (max-width: 426px) {
-        .testimonial-carousel .owl-nav {
+        .testimonial-carousel .owl-nav,
+        .stater-carousel .owl-nav {
             left: 29%;
         }
 }
