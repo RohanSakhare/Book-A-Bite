@@ -4,6 +4,7 @@
 <head>
     @include('Admin/common/header-links')
     <link rel="stylesheet" href="{{ asset('admin-assets/css/auth.css') }}">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 
 
@@ -50,7 +51,15 @@
             <button type="submit" class="submit-button">Sign In</button>
         </form>
     </div>
-
+    <script>
+        @if (session('fail'))
+            Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: '{{ session('fail') }}',
+            });
+        @endif
+    </script>
 
     @include('Admin/common/footer-links')
 
