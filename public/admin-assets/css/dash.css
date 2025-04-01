@@ -79,7 +79,11 @@
 #main-wrapper {
     display: none;
 }
-
+div.dataTables_wrapper div.dataTables_length select{
+    padding: 6px !important;
+    width: 65px !important;
+    margin-right:10px !important;
+}
 
 /* spinner end */
 

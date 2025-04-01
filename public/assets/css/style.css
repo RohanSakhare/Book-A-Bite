@@ -260,6 +260,12 @@
         top: 500px;
     }
 }
+
+
+.btn-outline-primary:active{
+    background-color: #1520b8;
+    border-color: #1a15b8;
+}
 /* tablet view */
 @media (max-width: 768px) {
     #header-carousel .carousel-item {
@@ -574,4 +580,26 @@
 
 .footer .copyright a:hover {
     color: var(--primary);
+}
+
+
+.table {
+    cursor: pointer;
+    border: 2px solid transparent;
+    padding: 10px;
+    transition: all 0.3s ease;
+}
+
+.table:hover {
+    border-color: blue;
+}
+
+.selected {
+    border-color: green !important;
+    background-color: #d4edda;
+}
+
+.disabled {
+    opacity: 0.5;
+    pointer-events: none;
 }

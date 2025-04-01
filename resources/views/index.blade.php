@@ -54,30 +54,30 @@
                         <div class="card p-2 form-card wow fadeInUp mt-2 shadow" data-wow-delay="0.1s">
                             <h1 class="text-center pt-3 fw-bold">Book a Table</h1>
                             <div class="card-body section-header ">
-                                <form id="bookingForm" class="mt-3" action="{{ route('store_booking') }}"
-                                    method="post" enctype="multipart/form-data">
+                                <form id="bookingForm" class="mt-3" action="{{ route('store_booking') }}" method="post"
+                                    enctype="multipart/form-data">
                                     @csrf
                                     <div class="row">
                                         <div class="col-lg-6 col-md-6 col-12 mb-3">
                                             <label for="name" class="form-label">Your Name</label>
-                                            <input type="text" class="form-control" id="name" name="name" placeholder="Full Name"
-                                                required>
+                                            <input type="text" class="form-control" id="name" name="name"
+                                                placeholder="Full Name" required>
                                             @error('name')
                                                 <div class="text-danger">{{ $message }}</div>
                                             @enderror
                                         </div>
                                         <div class="col-lg-6 col-md-6 col-12 mb-3">
                                             <label for="email" class="form-label">Email Address</label>
-                                            <input type="email" class="form-control" id="email" name="email" placeholder="Email-Id"
-                                                required>
+                                            <input type="email" class="form-control" id="email" name="email"
+                                                placeholder="Email-Id" required>
                                             @error('email')
                                                 <div class="text-danger">{{ $message }}</div>
                                             @enderror
                                         </div>
                                         <div class="col-lg-6 col-md-6 col-12 mb-3">
                                             <label for="number" class="form-label">Phone Number</label>
-                                            <input type="number" class="form-control" id="number" pattern="\d{10}" placeholder="Phone Number"
-                                                maxlength="10" name="number" required>
+                                            <input type="number" class="form-control" id="number" pattern="\d{10}"
+                                                placeholder="Phone Number" maxlength="10" name="number" required>
                                             @error('number')
                                                 <div class="text-danger">{{ $message }}</div>
                                             @enderror
@@ -87,18 +87,20 @@
                                         <div class="col-lg-6 col-md-6 col-12 mb-3">
                                             <label for="date" class="form-label">Date</label>
                                             <input type="date" class="form-control" id="date" name="date"
-                                                required>
+                                                min="<?php echo date('Y-m-d'); ?>" required>
                                             @error('date')
                                                 <div class="text-danger">{{ $message }}</div>
                                             @enderror
                                         </div>
                                         <div class="col-lg-6 col-md-6 col-12 mb-3">
                                             <label for="time" class="form-label">Time</label>
-                                            <input type="time" class="form-control" id="time" name="time"
-                                                required>
+                                            <input type="time" class="form-control" id="time" name="time" required
+                                                min="10:00" max="22:00">
                                             @error('time')
                                                 <div class="text-danger">{{ $message }}</div>
                                             @enderror
+                                            <div class="text-danger" id="timeError" style="display: none;">Time must be
+                                                between 10:00 AM and 10:00 PM.</div>
                                         </div>
                                         <div class="col-lg-6 col-md-6 col-12 mb-3">
                                             <label for="guests" class="form-label">Number of Guests</label>
@@ -130,8 +132,7 @@
 
                                                 </div>
                                                 <div class="col-lg-4">
-                                                    <div class="table three_table" data-table-id="3"
-                                                        data-capacity="6">
+                                                    <div class="table three_table" data-table-id="3" data-capacity="6">
                                                         <p class="pt-4 text-center">Table 3 (6 seats)</p>
                                                     </div>
                                                 </div>
@@ -140,25 +141,18 @@
                                             @error('table_id')
                                                 <div class="text-danger">{{ $message }}</div>
                                             @enderror
-
-
-
                                         </div>
-
-
                                         <div class="col-12 mb-3">
                                             <label for="request" class="form-label">Special Requests</label>
-                                            <textarea class="form-control" id="request" name="request" rows="3" placeholder="Request"></textarea>
+                                            <textarea class="form-control" id="request" name="request" rows="3"
+                                                placeholder="Request"></textarea>
                                             @error('request')
                                                 <div class="text-danger">{{ $message }}</div>
                                             @enderror
                                         </div>
-
                                     </div>
                                     <button type="submit" class="btn btn-primary w-100">Book Now</button>
-
                                 </form>
-
                             </div>
                         </div>
                     </div>
@@ -245,8 +239,7 @@
                                 Course</a>
                         </li>
                         <li class="nav-item me-0">
-                            <a class="btn btn-outline-primary border-2" data-bs-toggle="pill"
-                                href="#tab-3">Desserts</a>
+                            <a class="btn btn-outline-primary border-2" data-bs-toggle="pill" href="#tab-3">Desserts</a>
                         </li>
                     </ul>
                 </div>
@@ -279,21 +272,21 @@
                 <div id="tab-2" class="tab-pane fade show p-0">
                     <div class="owl-carousel  stater-carousel">
                         @foreach ($mainCourses as $mainCourse)
-                                <div class="product-item shadow  mb-3">
-                                    <div class="position-relative bg-light overflow-hidden">
-                                        <img class="img-fluid manu-img w-100" src="{{ asset($mainCourse->image) }}"
-                                            alt="{{ $mainCourse->title }}">
-                                        <div
-                                            class="bg-secondary rounded text-white position-absolute start-0 top-0 m-4 py-1 px-3">
-                                            New</div>
-                                    </div>
-                                    <div class="text-center p-4">
-                                        <a class="d-block h5 mb-2" href="javascript:void(0);">{{ $mainCourse->title }}</a>
-                                        <span class="text-primary me-1">₹{{ $mainCourse->price_now }}</span>
-                                        <span
-                                            class="text-body text-decoration-line-through">₹{{ $mainCourse->price_before }}</span>
-                                    </div>
+                            <div class="product-item shadow  mb-3">
+                                <div class="position-relative bg-light overflow-hidden">
+                                    <img class="img-fluid manu-img w-100" src="{{ asset($mainCourse->image) }}"
+                                        alt="{{ $mainCourse->title }}">
+                                    <div
+                                        class="bg-secondary rounded text-white position-absolute start-0 top-0 m-4 py-1 px-3">
+                                        New</div>
                                 </div>
+                                <div class="text-center p-4">
+                                    <a class="d-block h5 mb-2" href="javascript:void(0);">{{ $mainCourse->title }}</a>
+                                    <span class="text-primary me-1">₹{{ $mainCourse->price_now }}</span>
+                                    <span
+                                        class="text-body text-decoration-line-through">₹{{ $mainCourse->price_before }}</span>
+                                </div>
+                            </div>
                         @endforeach
                     </div>
                 </div>
@@ -302,21 +295,21 @@
                 <div id="tab-3" class="tab-pane fade show p-0">
                     <div class="owl-carousel  stater-carousel">
                         @foreach ($desserts as $dessert)
-                                <div class="product-item shadow mb-3">
-                                    <div class="position-relative bg-light overflow-hidden">
-                                        <img class="img-fluid manu-img w-100" src="{{ asset($dessert->image) }}"
-                                            alt="{{ $dessert->title }}">
-                                        <div
-                                            class="bg-secondary rounded text-white position-absolute start-0 top-0 m-4 py-1 px-3">
-                                            New</div>
-                                    </div>
-                                    <div class="text-center p-4">
-                                        <a class="d-block h5 mb-2" href="javascript:void(0);">{{ $dessert->title }}</a>
-                                        <span class="text-primary me-1">₹{{ $dessert->price_now }}</span>
-                                        <span
-                                            class="text-body text-decoration-line-through">₹{{ $dessert->price_before }}</span>
-                                    </div>
+                            <div class="product-item shadow mb-3">
+                                <div class="position-relative bg-light overflow-hidden">
+                                    <img class="img-fluid manu-img w-100" src="{{ asset($dessert->image) }}"
+                                        alt="{{ $dessert->title }}">
+                                    <div
+                                        class="bg-secondary rounded text-white position-absolute start-0 top-0 m-4 py-1 px-3">
+                                        New</div>
                                 </div>
+                                <div class="text-center p-4">
+                                    <a class="d-block h5 mb-2" href="javascript:void(0);">{{ $dessert->title }}</a>
+                                    <span class="text-primary me-1">₹{{ $dessert->price_now }}</span>
+                                    <span
+                                        class="text-body text-decoration-line-through">₹{{ $dessert->price_before }}</span>
+                                </div>
+                            </div>
                         @endforeach
                     </div>
                 </div>

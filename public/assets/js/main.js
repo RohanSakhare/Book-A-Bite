@@ -256,6 +256,44 @@ document.getElementById('bookingForm').addEventListener('submit', function (e) {
         });
 });
 
+document.addEventListener("DOMContentLoaded", function () {
+    const guestSelect = document.getElementById("guests");
+    const tables = document.querySelectorAll(".table");
+    const tableInput = document.getElementById("table_id");
+
+    function updateTableAvailability() {
+        const guestCount = parseInt(guestSelect.value);
+
+        tables.forEach(table => {
+            const tableCapacity = parseInt(table.getAttribute("data-capacity"));
+            table.classList.remove("disabled");
+
+            if (
+                (guestCount === 1 && tableCapacity > 2) ||
+                (guestCount === 2 && tableCapacity > 2) ||
+                (guestCount === 3 && tableCapacity > 4) ||
+                (guestCount === 4 && tableCapacity !== 4) ||
+                (guestCount === 5 && tableCapacity === 2) ||
+                (guestCount === 6 && tableCapacity !== 6)
+            ) {
+                table.classList.add("disabled");
+            }
+        });
+    }
+
+    tables.forEach(table => {
+        table.addEventListener("click", function () {
+            if (!this.classList.contains("disabled")) {
+                tables.forEach(t => t.classList.remove("selected"));
+                this.classList.add("selected");
+                tableInput.value = this.getAttribute("data-table-id");
+            }
+        });
+    });
+
+    guestSelect.addEventListener("change", updateTableAvailability);
+    updateTableAvailability(); // Run on page load
+});
 
 
 document.addEventListener('DOMContentLoaded', function () {
@@ -267,4 +305,17 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 
+document.getElementById('time').addEventListener('input', function () {
+    let timeInput = this.value;
+    let errorDiv = document.getElementById('timeError');
+    let selectedTime = new Date(`1970-01-01T${timeInput}:00`);
+    let minTime = new Date(`1970-01-01T10:00:00`);
+    let maxTime = new Date(`1970-01-01T22:00:00`);
 
+    if (selectedTime < minTime || selectedTime > maxTime) {
+        errorDiv.style.display = 'block';
+        this.value = ''; // Clear invalid input
+    } else {
+        errorDiv.style.display = 'none';
+    }
+});
