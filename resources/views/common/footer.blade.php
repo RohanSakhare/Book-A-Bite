@@ -4,7 +4,7 @@
             <div class="row g-5">
                 <div class="col-lg-4 col-md-6">
                     <h1 class="fw-bold text-primary mb-4">Book <span class="text-secondary">A </span>Bite</h1>
-                    <p>Welcome to the Book A Bite. <br> Thanks for your visit</p>
+                    <p>Thanks for your visit</p>
                     <div class="d-flex pt-2">
                         <a class="btn btn-square btn-outline-light rounded-circle me-1" href=""><i
                                 class="fab fa-twitter"></i></a>
@@ -19,7 +19,7 @@
                 <div class="col-lg-4 col-md-6">
                     <h4 class="text-light mb-4">Address</h4>
                     <p><i class="fa fa-map-marker-alt me-3"></i>M2 Road, Chhatrapati Sambhajinagar, Maharashtra</p>
-                    <p><i class="fa-solid fa-phone me-3"></i>+91 9679634533</p>
+                    <p><i class="fa-solid fa-phone me-3"></i>+91 967963XXXX</p>
                     <p><i class="fa fa-envelope me-3"></i>bookabite@gmail.com</p>
                 </div>
                 <div class="col-lg-4 col-md-6">

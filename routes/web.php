@@ -141,4 +141,3 @@ Route::middleware(['isLoggedIn', 'preventBackHistory'])->group(function () {
         Route::get('admin/features_script', 'FeaturesScript')->name('features_script');
     });
 });
-

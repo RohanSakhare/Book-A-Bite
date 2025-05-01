@@ -64,42 +64,42 @@
 
     @include('admin/common/footer-links')
 
-    <script>
-        $(document).ready(function() {
-            var table = $('#table1').DataTable({
-                processing: true,
-                serverSide: true,
-                ajax: "{{ route('appetizer_script') }}",
-                columns: [{
-                        data: 'appetizer_id',
-                        name: 'appetizer_id'
-                    },
-                    {
-                        data: 'image',
-                        name: 'image'
-                    },
-                    {
-                        data: 'title',
-                        name: 'title'
-                    },
-                    {
-                        data: 'price_now',
-                        name: 'price_now'
-                    },
-                    {
-                        data: 'price_before',
-                        name: 'price_before'
-                    },
-                    {
-                        data: 'action',
-                        name: 'action',
-                        orderable: false,
-                        searchable: false
-                    }
-                ]
+        <script>
+            $(document).ready(function() {
+                var table = $('#table1').DataTable({
+                    processing: true,
+                    serverSide: true,
+                    ajax: "{{ route('appetizer_script') }}",
+                    columns: [{
+                            data: 'appetizer_id',
+                            name: 'appetizer_id'
+                        },
+                        {
+                            data: 'image',
+                            name: 'image'
+                        },
+                        {
+                            data: 'title',
+                            name: 'title'
+                        },
+                        {
+                            data: 'price_now',
+                            name: 'price_now'
+                        },
+                        {
+                            data: 'price_before',
+                            name: 'price_before'
+                        },
+                        {
+                            data: 'action',
+                            name: 'action',
+                            orderable: false,
+                            searchable: false
+                        }
+                    ]
+                });
             });
-        });
-    </script>
+        </script>
 
 </body>
 

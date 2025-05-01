@@ -129,8 +129,7 @@
 }
 
 #header .icon_header {
-    /* color: rgb(246, 255, 0); */
-    color: yellow !important;
+    color: #7400ff !important;
 
 }
 
@@ -403,7 +402,7 @@
 }
 
 .features_container {
-    height: 550px !important;
+    height: 480px !important;
     padding: 10px;
 }
 

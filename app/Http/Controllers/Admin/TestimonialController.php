@@ -26,7 +26,7 @@ class TestimonialController extends Controller
                         $actionBtn .= '<form id="delete-form-' . $row->testimonial_id . '" action="' . $delete . '" method="POST" style="display:inline;">
                                       ' . csrf_field() . '
                                       ' . method_field('DELETE') . '
-                                      <button type="button" class="delete-button btn btn-danger mt-2 ms-2" onclick="confirmDelete(' . $row->testimonial_id . ')">Delete</button>
+                                      <button type="button" class="delete-button btn btn-danger mt-2 " onclick="confirmDelete(' . $row->testimonial_id . ')">Delete</button>
                                       </form>';
                         return $actionBtn;
                     })

@@ -76,8 +76,8 @@
                         <h4 class="mb-3">Fresh Ingredients</h4>
                         <p class="mb-4">We source only the freshest, locally grown ingredients to create dishes that
                             burst with flavor and nutrition.</p>
-                        <a class="btn btn-outline-primary border-2 py-2 px-4 rounded-pill" href="">Learn
-                            More</a>
+                        <!-- <a class="btn btn-outline-primary border-2 py-2 px-4 rounded-pill" href="">Learn
+                            More</a> -->
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
@@ -87,8 +87,8 @@
                         <h4 class="mb-3">Expert Chefs</h4>
                         <p class="mb-4">Our talented chefs bring years of experience and creativity to every dish,
                             ensuring a memorable dining experience.</p>
-                        <a class="btn btn-outline-primary border-2 py-2 px-4 rounded-pill" href="">Meet Our
-                            Chefs</a>
+                        <!-- <a class="btn btn-outline-primary border-2 py-2 px-4 rounded-pill" href="">Meet Our
+                            Chefs</a> -->
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
@@ -98,8 +98,8 @@
                         <h4 class="mb-3">Cozy Ambiance</h4>
                         <p class="mb-4">Enjoy a warm and inviting atmosphere, perfect for family dinners, romantic
                             dates, or casual gatherings and more..</p>
-                        <a class="btn btn-outline-primary border-2 py-2 px-4 rounded-pill" href="">View
-                            Gallery</a>
+                        <!-- <a class="btn btn-outline-primary border-2 py-2 px-4 rounded-pill" href="">View
+                            Gallery</a> -->
 
                     </div>
                 </div>
