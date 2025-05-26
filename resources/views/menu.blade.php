@@ -48,8 +48,7 @@
                                 Course</a>
                         </li>
                         <li class="nav-item me-0">
-                            <a class="btn btn-outline-primary border-2" data-bs-toggle="pill"
-                                href="#tab-3">Desserts</a>
+                            <a class="btn btn-outline-primary border-2" data-bs-toggle="pill" href="#tab-3">Desserts</a>
                         </li>
                     </ul>
                 </div>
@@ -57,21 +56,23 @@
             <div class="tab-content ">
                 <!-- Starter Tab -->
                 <div id="tab-1" class="tab-pane fade show p-0 active">
-                    <div class="owl-carousel  stater-carousel wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="row">
                         @foreach ($appetizers as $appetizer)
-                            <div class="product-item shadow mb-3">
-                                <div class="position-relative bg-light overflow-hidden">
-                                    <img class="img-fluid manu-img w-100" src="{{ asset($appetizer->image) }}"
-                                        alt="{{ $appetizer->title }}">
-                                    <div
-                                        class="bg-secondary rounded text-white position-absolute start-0 top-0 m-4 py-1 px-3">
-                                        New</div>
-                                </div>
-                                <div class="text-center p-4">
-                                    <a class="d-block h5 mb-2" href="javascript:void(0);">{{ $appetizer->title }}</a>
-                                    <span class="text-primary me-1">₹{{ $appetizer->price_now }}</span>
-                                    <span
-                                        class="text-body text-decoration-line-through">₹{{ $appetizer->price_before }}</span>
+                            <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-3">
+                                <div class="product-item shadow">
+                                    <div class="position-relative bg-light overflow-hidden">
+                                        <img class="img-fluid manu-img w-100" src="{{ asset($appetizer->image) }}"
+                                            alt="{{ $appetizer->title }}">
+                                        <div
+                                            class="bg-secondary rounded text-white position-absolute start-0 top-0 m-4 py-1 px-3">
+                                            New</div>
+                                    </div>
+                                    <div class="text-center p-4">
+                                        <a class="d-block h5 mb-2" href="javascript:void(0);">{{ $appetizer->title }}</a>
+                                        <span class="text-primary me-1">₹{{ $appetizer->price_now }}</span>
+                                        <span
+                                            class="text-body text-decoration-line-through">₹{{ $appetizer->price_before }}</span>
+                                    </div>
                                 </div>
                             </div>
                         @endforeach
@@ -79,9 +80,10 @@
                 </div>
                 <!-- Main Course Tab -->
                 <div id="tab-2" class="tab-pane fade show p-0">
-                    <div class="owl-carousel  stater-carousel">
+                    <div class="row">
                         @foreach ($mainCourses as $mainCourse)
-                                <div class="product-item shadow  mb-3">
+                            <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-3">
+                                <div class="product-item shadow">
                                     <div class="position-relative bg-light overflow-hidden">
                                         <img class="img-fluid manu-img w-100" src="{{ asset($mainCourse->image) }}"
                                             alt="{{ $mainCourse->title }}">
@@ -96,15 +98,17 @@
                                             class="text-body text-decoration-line-through">₹{{ $mainCourse->price_before }}</span>
                                     </div>
                                 </div>
+                            </div>
                         @endforeach
                     </div>
                 </div>
 
                 <!-- Desserts Tab -->
                 <div id="tab-3" class="tab-pane fade show p-0">
-                    <div class="owl-carousel  stater-carousel">
+                    <div class="row">
                         @foreach ($desserts as $dessert)
-                                <div class="product-item shadow mb-3">
+                            <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-3">
+                                <div class="product-item shadow">
                                     <div class="position-relative bg-light overflow-hidden">
                                         <img class="img-fluid manu-img w-100" src="{{ asset($dessert->image) }}"
                                             alt="{{ $dessert->title }}">
@@ -119,6 +123,7 @@
                                             class="text-body text-decoration-line-through">₹{{ $dessert->price_before }}</span>
                                     </div>
                                 </div>
+                            </div>
                         @endforeach
                     </div>
                 </div>

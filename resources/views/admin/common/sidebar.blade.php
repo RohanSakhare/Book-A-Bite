@@ -120,14 +120,14 @@
                           <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
                           <span class="hide-menu">AUTH</span>
                       </li>
-                      <li class="sidebar-item">
+                      <!-- <li class="sidebar-item">
                           <a class="sidebar-link" href="{{ route('login') }}" aria-expanded="false">
                               <span>
                                   <i class="ti ti-login"></i>
                               </span>
                               <span class="hide-menu">Login</span>
                           </a>
-                      </li>
+                      </li> -->
                       <li class="sidebar-item">
                           <a class="sidebar-link" href="{{ route('register') }}" aria-expanded="false">
                               <span>
